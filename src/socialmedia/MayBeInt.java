@@ -2,7 +2,7 @@ package socialmedia;
 
 public class MayBeInt {
 
-    private int age;
+    private int value;
     private int status;
     /*
         1 ... nicht erfasst
@@ -14,12 +14,13 @@ public class MayBeInt {
     public static final int STATUS_SET_NOT_VISIBLE = 2;
     public static final int STATUS_SET_VISIBLE = 3;
 
-    public MayBeInt(int age, int status) {
-        this.age = age;
+    public MayBeInt(int value, int status) {
+        this.value = value;
         setStatus(status);
     }
 
     public void print(){
+        /*
         if (status == STATUS_NOT_SET)
             System.out.println("Wert wurde nicht erfasst!");
         else if (status == STATUS_SET_NOT_VISIBLE)
@@ -28,10 +29,26 @@ public class MayBeInt {
             System.out.println("Wert: " + age);
         else
             System.out.println("Undefinierter Status!");
+         */
+
+        switch (status){
+            case STATUS_NOT_SET:
+                System.out.println("Wert wurde nicht erfasst!");
+                break;
+            case STATUS_SET_NOT_VISIBLE:
+                System.out.println("Wert wurde erfasst, darf aber nicht ausgegeben werden!");
+                break;
+            case STATUS_SET_VISIBLE:
+                System.out.println("Wert: " + value);
+                break;
+            default:
+                System.out.println("Undefinierter Status!");
+
+        }
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public void setStatus(int status) {
@@ -43,8 +60,8 @@ public class MayBeInt {
         }
     }
 
-    public int getAge() {
-        return age;
+    public int getValue() {
+        return value;
     }
 
     public int getStatus() {

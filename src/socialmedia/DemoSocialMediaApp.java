@@ -3,6 +3,8 @@ package socialmedia;
 public class DemoSocialMediaApp {
     public static void main(String[] args) {
 
+
+
         Profil max = new Profil("Max@Muster.at", "Musterstraße 1", 39, 3_500);
         max.printProfil();
 
